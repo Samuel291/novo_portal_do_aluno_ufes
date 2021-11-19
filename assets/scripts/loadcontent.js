@@ -9,7 +9,18 @@ function listenAll(element, callback, event = "click") {
     callback($(this));
   });
 }
+
+/**
+ *
+ * @param page
+ * @returns {*|jQuery|boolean}
+ */
+function loadContent(page){
+    return (page !== '')?$('#content').load(page + '.html'):false;
+}
+
 listenAll('.loadcontent', function (element){
-  // console.log(element)
-  $('#content').load(element.data('content'));
+  loadContent(element.data('content'))
 })
+
+loadContent(window.location.hash.substr(1))
