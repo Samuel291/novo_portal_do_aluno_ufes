@@ -16,11 +16,11 @@ function listenAll(element, callback, event = "click") {
  * @returns {*|jQuery|boolean}
  */
 function loadContent(page){
-    return (page !== '')?$('#content').load(page + '.html'):false;
+  return (page !== '')?$('#content').load(page + '.html'):false;
 }
 
-listenAll('.loadcontent', function (element){
-  loadContent(element.data('content'))
-})
 
 loadContent(window.location.hash.substr(1))
+function openDocument(){
+  window.open('assets/documents/pdf_de_exemplo.pdf', "_blank");
+}
