@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'ufes_sansbold';
+    src: url("../fonts/UfesSansWOFF/ufessans-bold-webfont.woff");
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ufes_sansbook';
+    src: url("../fonts/UfesSansWOFF/ufessans-book-webfont.woff");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ufes_sansbook_italic';
+    src: url("../fonts");
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'ufes_sansextrabold';
+    src: url("../fonts");
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ufes_sansitalic';
+    src: url("../fonts");
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'ufes_sanslight';
+    src: url("../fonts");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ufes_sanslight_italic';
+    src: url("../fonts");
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'ufes_sansmedium';
+    src: url("../fonts");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ufes_sansregular';
+    src: url("../fonts/UfesSansWOFF/ufessans-regular-webfont.woff");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ufes_sanssemibold';
+    src: url("../fonts");
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ufes_sansthin';
+    src: url("../fonts");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ufes_sansthin_italic';
+    src: url("../fonts");
+    font-weight: normal;
+    font-style: italic;
+}

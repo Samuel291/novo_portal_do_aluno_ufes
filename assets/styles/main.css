@@ -1,0 +1,54 @@
+
+body {
+    min-height: 100vh;
+    font-family: 'ufes_sansregular', sans-serif;
+}
+
+html {
+    min-height: 100vh;
+}
+
+main {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+/*.bi {*/
+/*    vertical-align: -.125em;*/
+/*    pointer-events: none;*/
+/*    fill: currentColor;*/
+/*}*/
+h1{
+    font-family: 'ufes_sansbold', sans-serif;
+    font-weight: bold;
+}
+.nav-flush .nav-link {
+    border-radius: 0;
+}
+.btn-toggle-nav a {
+    display: inline-flex;
+    padding: .1875rem .5rem;
+    margin-top: .125rem;
+    margin-left: 1.25rem;
+    text-decoration: none;
+}
+.btn-toggle-nav a:hover,
+.btn-toggle-nav a:focus {
+    background-color: #d2f4ea;
+}
+#sidebar{
+    min-height: 100vh;
+    width: 280px;
+    background-color: #aaa;
+}
+#content{
+    margin: 20px;
+}
+.subitems{
+    background-color: #ccc;
+}
