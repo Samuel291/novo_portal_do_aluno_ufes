@@ -17,24 +17,25 @@
 
 <body>
 <main class="d-flex">
-  <div id="sidebar" class="d-flex flex-column p-3">
-    <div class="d-flex justify-content-center mb-2" >
-      <div style="width: 150px; text-align: center">
-        <h5>Portal do Aluno</h5>
-      <img src="assets/media/marca_ufes.png" width="150px" alt="Ufes"/>
-        <h6>Universidade Federal do Espírito Santo</h6>
+  <aside>
+    <nav id="sidebar" class="sidebar-nav d-flex flex-column p-3 offcanvas offcanvas-start" style="overflow-y:auto;">
+      <div class="d-flex justify-content-center mb-2" >
+        <div style="width: 150px; text-align: center">
+          <h5>Portal do Aluno</h5>
+          <img src="assets/media/marca_ufes.png" width="150px" alt="Ufes"/>
+          <h6>Universidade Federal do Espírito Santo</h6>
+        </div>
       </div>
-    </div>
-    <hr>
+      <hr>
       <ul class="nav nav-pills flex-column mb-auto">
-      <li class="nav-item">
-        <a class="nav-link text-white" aria-current="page" data-bs-toggle="collapse" href="#collapseLifeAcademic">
-          <i class="fas fa-user-graduate"></i>
-          Vida Acadêmica
-        </a>
-      </li>
-      <div class="collapse subitems" id="collapseLifeAcademic">
-        <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <a class="nav-link text-white" aria-current="page" data-bs-toggle="collapse" href="#collapseLifeAcademic">
+            <i class="fas fa-user-graduate"></i>
+            Vida Acadêmica
+          </a>
+        </li>
+        <div class="collapse subitems" id="collapseLifeAcademic">
+          <ul class="nav nav-pills flex-column mb-auto">
           <li class="nav-item">
             <a href="#" class="nav-link openDocument">
               Carteirinha UFES
@@ -72,144 +73,152 @@
             </a>
           </li>
         </ul>
-      </div>
-      <li class="nav-item">
-        <a class="nav-link text-white" aria-current="page" data-bs-toggle="collapse" href="#collapseRegistration">
-          <i class="fas fa-clipboard"></i>
-          Matrícula
-          <!--          <span class="badge bg-primary rounded-pill">14</span>-->
-        </a>
-      </li>
-      <div class="collapse subitems" id="collapseRegistration">
-        <ul class="nav nav-pills flex-column mb-auto">
-          <li class="nav-item">
-            <a href="#matricula" data-content="matricula"  class="nav-link loadcontent">
-              Solicitação de Matrícula
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              Oferta do Semestre
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              Comprovante de Solicitação
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              Comp. de Matrícula Provisório
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#periodModal">
-              Atestado de Matrícula
-            </a>
-          </li>
-        </ul>
-      </div>
-      <li class="nav-item">
-        <a class="nav-link text-white" aria-current="page" data-bs-toggle="collapse" href="#collapseCourse">
-          <i class="fas fa-graduation-cap"></i>
-          Curso
-        </a>
-      </li>
-      <div class="collapse subitems" id="collapseCourse">
-        <ul class="nav nav-pills flex-column mb-auto">
-          <li class="nav-item">
-            <a href="https://design.ufes.br/" target="_blank" class="nav-link">
-              Site do Curso
-              <i class="fas fa-external-link-alt"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              Programa da Disciplina
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              Currículo de Cursos
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              Colação de Grau / Diploma
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              Trancamento do Curso
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              Desligamento Voluntário
-            </a>
-          </li>
-        </ul>
-      </div>
-      <li class="nav-item">
-        <a class="nav-link text-white" aria-current="page" data-bs-toggle="collapse" href="#collapseOthers">
-          <i class="fas fa-tasks"></i>
-          Outros
-        </a>
-      </li>
-      <div class="collapse subitems" id="collapseOthers">
+        </div>
+        <li class="nav-item">
+          <a class="nav-link text-white" aria-current="page" data-bs-toggle="collapse" href="#collapseRegistration">
+            <i class="fas fa-clipboard"></i>
+            Matrícula
+            <!--          <span class="badge bg-primary rounded-pill">14</span>-->
+          </a>
+        </li>
+        <div class="collapse subitems" id="collapseRegistration">
           <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-              <a href="#" class="nav-link">
-                Alteração Dados Cadastrais
+              <a href="#solicitacao_matricula" data-content="solicitacao_matricula"  class="nav-link loadcontent">
+                Solicitação de Matrícula
               </a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">
-                Biblioteca
-                <i class="fas fa-external-link-alt"></i>
+                Oferta do Semestre
               </a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">
-                Assistencia Estudantil
-                <i class="fas fa-external-link-alt"></i>
+                Comprovante de Solicitação
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                Comp. de Matrícula Provisório
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#periodModal">
+                Atestado de Matrícula
               </a>
             </li>
           </ul>
+        </div>
+        <li class="nav-item">
+          <a class="nav-link text-white" aria-current="page" data-bs-toggle="collapse" href="#collapseCourse">
+            <i class="fas fa-graduation-cap"></i>
+            Curso
+          </a>
+        </li>
+        <div class="collapse subitems" id="collapseCourse">
+          <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+              <a href="https://design.ufes.br/" target="_blank" class="nav-link">
+                Site do Curso
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                Programa da Disciplina
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                Currículo de Cursos
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                Colação de Grau / Diploma
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                Trancamento do Curso
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                Desligamento Voluntário
+              </a>
+            </li>
+          </ul>
+        </div>
+        <li class="nav-item">
+          <a class="nav-link text-white" aria-current="page" data-bs-toggle="collapse" href="#collapseOthers">
+            <i class="fas fa-tasks"></i>
+            Outros
+          </a>
+        </li>
+        <div class="collapse subitems" id="collapseOthers">
+            <ul class="nav nav-pills flex-column mb-auto">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  Alteração Dados Cadastrais
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  Biblioteca
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  Assistencia Estudantil
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </li>
+            </ul>
       </div>
-      <li class="nav-item">
-        <a class="nav-link text-white" aria-current="page" data-bs-toggle="collapse" href="#collapseHelp">
-          <i class="fas fa-question-circle"></i>
-          Ajuda
-        </a>
-      </li>
-      <div class="collapse subitems" id="collapseHelp">
-        <ul class="nav nav-pills flex-column mb-auto">
-          <li class="nav-item">
-            <a href="#faq" data-content="faq" class="nav-link loadcontent">
-              Perguntas Frequentes (FAQ)
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#guides" data-content="guides" class="nav-link loadcontent">
-              Guias e Tutoriais
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              Fale Conosco
-            </a>
-          </li>
-        </ul>
-      </div>
-    </ul>
-    <hr>
-    <a href="#" class="nav-link text-white">
-      Sair
-    </a>
-  </div>
-  <div id="content" class="col-8">
+        <li class="nav-item">
+          <a class="nav-link text-white" aria-current="page" data-bs-toggle="collapse" href="#collapseHelp">
+            <i class="fas fa-question-circle"></i>
+            Ajuda
+          </a>
+        </li>
+        <div class="collapse subitems" id="collapseHelp">
+          <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+              <a href="#faq" data-content="faq" class="nav-link loadcontent">
+                Perguntas Frequentes (FAQ)
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#guides" data-content="guides" class="nav-link loadcontent">
+                Guias e Tutoriais
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                Fale Conosco
+              </a>
+            </li>
+          </ul>
+        </div>
+      </ul>
+      <hr>
+      <a href="#" class="nav-link text-white">
+        Sair
+      </a>
+    </nav>
+  </aside>
+  <div id="content" class="box-content col-8">
     <div id="header">
+      <nav class="navbar navbar-dark navbar-expand-md mb-3">
+        <div class="container-fluid navbar-size collapse navbar-collapse">
+          <button class="btn bg-dark  fs-2 d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
       <h1>Bem-vindo,</h1>
       <h3>Samuel de Almeida Lopes</h3>
     </div>

@@ -52,3 +52,53 @@ h1{
 .subitems{
     background-color: #ccc;
 }
+
+:root {
+    --size-nav: 37.7333px !important;
+    --size-sidebar: 280px !important;
+}
+
+.sidebar-nav {
+    min-height: 100vh;
+    /*background: #181E36 !important;*/
+    top: 0;
+    padding: 1rem 0;
+    width: var(--size-sidebar) !important;
+}
+
+@media (min-width: 768px) {
+    .sidebar-nav {
+        position: sticky !important;
+        visibility: visible !important;
+        transform: none !important;
+    }
+}
+
+/*.sidebar-nav .nav-item {*/
+/*    padding: 1rem;*/
+/*}*/
+
+/*.sidebar-nav .nav-link {*/
+/*    color: white !important;*/
+/*    padding: 1rem;*/
+/*    border-radius: .6rem;*/
+/*}*/
+
+/*.sidebar-nav .nav-link:hover {*/
+/*    background-color: #1F2C4F;*/
+/*}*/
+
+/*.sidebar-nav .nav-link.no-hover:hover {*/
+/*    background-color: transparent !important;*/
+/*}*/
+
+
+.box-content {
+    width: calc(100% - var(--size-sidebar));
+}
+
+@media (max-width: 992px) {
+    .box-content {
+        width: 100%;
+    }
+}
