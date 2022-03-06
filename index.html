@@ -15,239 +15,304 @@
   <link rel="stylesheet" href="assets/styles/fonts.css"/>
 </head>
 
-<body>
-<main class="d-flex">
-  <aside>
-    <nav id="sidebar" class="sidebar-nav d-flex flex-column p-3 offcanvas offcanvas-start" style="overflow-y:auto;">
-      <div class="d-flex justify-content-center mb-2" >
-        <div style="width: 150px; text-align: center">
-          <h5>Portal do Aluno</h5>
-          <img src="assets/media/marca_ufes.png" width="150px" alt="Ufes"/>
-          <h6>Universidade Federal do Espírito Santo</h6>
-        </div>
+<body  style="background-color: #f5f5f5">
+<div id="activecontent">
+</div>
+<div id="login" style="display: none">
+  <main class="form-signin text-center" style="padding-top: 100px;">
+    <form>
+      <h1 class="h3 mb-3 fw-normal">Portal do Aluno Ufes</h1>
+      <img class="mb-4" src="assets/media/marca_ufes.png" width="150px" alt="Ufes">
+
+      <div class="form-floating">
+        <input type="email" class="form-control" id="floatingInput" placeholder="Login">
+        <label for="floatingInput">Login</label>
       </div>
-      <hr>
-      <ul class="nav nav-pills flex-column mb-auto">
-        <li class="nav-item">
-          <a class="nav-link text-white" aria-current="page" data-bs-toggle="collapse" href="#collapseLifeAcademic">
-            <i class="fas fa-user-graduate"></i>
-            Vida Acadêmica
-          </a>
-        </li>
-        <div class="collapse subitems" id="collapseLifeAcademic">
-          <ul class="nav nav-pills flex-column mb-auto">
-          <li class="nav-item">
-            <a href="#" class="nav-link openDocument">
-              Carteirinha UFES
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              Diário de Classe
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              Plano de Ensino
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              Avaliação de Docentes
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link openDocument">
-              Histórico Parcial
-              <i class="fas fa-external-link-alt"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link openDocument">
-              Integralização Curricular
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#grade_horario_individual" data-content="grade_horario_individual" class="nav-link loadcontent">
-              Grade Horário Individual
-            </a>
-          </li>
-        </ul>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Senha">
+        <label for="floatingPassword">Senha</label>
+      </div>
+
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Lembrar senha
+        </label>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary entrar" type="submit">Entrar</button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
+    </form>
+  </main>
+</div>
+<div id="inicio" style="display: none">
+  <main class="d-flex">
+    <aside>
+      <nav id="sidebar" class="sidebar-nav d-flex flex-column p-3 offcanvas offcanvas-start" style="overflow-y:auto;">
+        <div class="d-flex justify-content-center mb-2" >
+          <div style="width: 150px; text-align: center">
+            <h5>Portal do Aluno</h5>
+            <img src="assets/media/marca_ufes.png" width="150px" alt="Ufes"/>
+            <h6>Universidade Federal do Espírito Santo</h6>
+          </div>
         </div>
-        <li class="nav-item">
-          <a class="nav-link text-white" aria-current="page" data-bs-toggle="collapse" href="#collapseRegistration">
-            <i class="fas fa-clipboard"></i>
-            Matrícula
-            <!--          <span class="badge bg-primary rounded-pill">14</span>-->
-          </a>
-        </li>
-        <div class="collapse subitems" id="collapseRegistration">
-          <ul class="nav nav-pills flex-column mb-auto">
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <a class="nav-link text-white" aria-current="page" data-bs-toggle="collapse" href="#collapseLifeAcademic">
+              <i class="fas fa-user-graduate"></i>
+              Vida Acadêmica
+            </a>
+          </li>
+          <div class="collapse subitems" id="collapseLifeAcademic">
+            <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-              <a href="#solicitacao_matricula" data-content="solicitacao_matricula"  class="nav-link loadcontent">
-                Solicitação de Matrícula
+              <a href="#" class="nav-link openDocument">
+                Carteirinha UFES
               </a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">
-                Oferta do Semestre
+                Diário de Classe
               </a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">
-                Comprovante de Solicitação
+                Plano de Ensino
               </a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">
-                Comp. de Matrícula Provisório
+                Avaliação de Docentes
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#periodModal">
-                Atestado de Matrícula
-              </a>
-            </li>
-          </ul>
-        </div>
-        <li class="nav-item">
-          <a class="nav-link text-white" aria-current="page" data-bs-toggle="collapse" href="#collapseCourse">
-            <i class="fas fa-graduation-cap"></i>
-            Curso
-          </a>
-        </li>
-        <div class="collapse subitems" id="collapseCourse">
-          <ul class="nav nav-pills flex-column mb-auto">
-            <li class="nav-item">
-              <a href="https://design.ufes.br/" target="_blank" class="nav-link">
-                Site do Curso
+              <a href="#" class="nav-link openDocument">
+                Histórico Parcial
                 <i class="fas fa-external-link-alt"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
-                Programa da Disciplina
+              <a href="#" class="nav-link openDocument">
+                Integralização Curricular
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
-                Currículo de Cursos
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                Colação de Grau / Diploma
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                Trancamento do Curso
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                Desligamento Voluntário
+              <a href="#grade_horario_individual" data-content="grade_horario_individual" class="nav-link loadcontent">
+                Grade Horário Individual
               </a>
             </li>
           </ul>
-        </div>
-        <li class="nav-item">
-          <a class="nav-link text-white" aria-current="page" data-bs-toggle="collapse" href="#collapseOthers">
-            <i class="fas fa-tasks"></i>
-            Outros
-          </a>
-        </li>
-        <div class="collapse subitems" id="collapseOthers">
+          </div>
+          <li class="nav-item">
+            <a class="nav-link text-white" aria-current="page" data-bs-toggle="collapse" href="#collapseRegistration">
+              <i class="fas fa-clipboard"></i>
+              Matrícula
+            </a>
+          </li>
+          <div class="collapse subitems" id="collapseRegistration">
             <ul class="nav nav-pills flex-column mb-auto">
               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  Alteração Dados Cadastrais
+                <a href="#solicitacao_matricula" data-content="solicitacao_matricula"  class="nav-link loadcontent">
+                  Solicitação de Matrícula
                 </a>
               </li>
               <li class="nav-item">
                 <a href="#" class="nav-link">
-                  Biblioteca
-                  <i class="fas fa-external-link-alt"></i>
+                  Oferta do Semestre
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  Assistencia Estudantil
-                  <i class="fas fa-external-link-alt"></i>
+                <a href="#" class="nav-link openDocument">
+                  Comprovante de Solicitação
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link openDocument">
+                  Comp. de Matrícula Provisório
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#periodModal">
+                  Atestado de Matrícula
                 </a>
               </li>
             </ul>
-      </div>
-        <li class="nav-item">
-          <a class="nav-link text-white" aria-current="page" data-bs-toggle="collapse" href="#collapseHelp">
-            <i class="fas fa-question-circle"></i>
-            Ajuda
-          </a>
-        </li>
-        <div class="collapse subitems" id="collapseHelp">
-          <ul class="nav nav-pills flex-column mb-auto">
-            <li class="nav-item">
-              <a href="#faq" data-content="faq" class="nav-link loadcontent">
-                Perguntas Frequentes (FAQ)
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#guides" data-content="guides" class="nav-link loadcontent">
-                Guias e Tutoriais
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                Fale Conosco
-              </a>
-            </li>
-          </ul>
+          </div>
+          <li class="nav-item">
+            <a class="nav-link text-white" aria-current="page" data-bs-toggle="collapse" href="#collapseCourse">
+              <i class="fas fa-graduation-cap"></i>
+              Curso
+            </a>
+          </li>
+          <div class="collapse subitems" id="collapseCourse">
+            <ul class="nav nav-pills flex-column mb-auto">
+              <li class="nav-item">
+                <a href="https://design.ufes.br/" target="_blank" class="nav-link">
+                  Site do Curso
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  Programa da Disciplina
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  Currículo de Cursos
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  Colação de Grau / Diploma
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  Trancamento do Curso
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  Desligamento Voluntário
+                </a>
+              </li>
+            </ul>
+          </div>
+          <li class="nav-item">
+            <a class="nav-link text-white" aria-current="page" data-bs-toggle="collapse" href="#collapseOthers">
+              <i class="fas fa-tasks"></i>
+              Outros
+            </a>
+          </li>
+          <div class="collapse subitems" id="collapseOthers">
+              <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    Alteração Dados Cadastrais
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://biblioteca.ufes.br/" target="_blank" class="nav-link">
+                    Biblioteca
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://ae.ufes.br/usuario/login" target="_blank" class="nav-link">
+                    Assistencia Estudantil
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </li>
+              </ul>
         </div>
-      </ul>
-      <hr>
-      <a href="#" class="nav-link text-white">
-        Sair
-      </a>
-    </nav>
-  </aside>
-  <div id="content" class="box-content col-8">
-    <div id="header">
-      <nav class="navbar navbar-dark navbar-expand-md mb-3">
-        <div class="container-fluid navbar-size collapse navbar-collapse">
-          <button class="btn bg-dark  fs-2 d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </div>
+          <li class="nav-item">
+            <a class="nav-link text-white" aria-current="page" data-bs-toggle="collapse" href="#collapseHelp">
+              <i class="fas fa-question-circle"></i>
+              Ajuda
+            </a>
+          </li>
+          <div class="collapse subitems" id="collapseHelp">
+            <ul class="nav nav-pills flex-column mb-auto">
+              <li class="nav-item">
+                <a href="#faq" data-content="faq" class="nav-link loadcontent">
+                  Perguntas Frequentes (FAQ)
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#guides" data-content="guides" class="nav-link loadcontent">
+                  Guias e Tutoriais
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  Fale Conosco
+                </a>
+              </li>
+            </ul>
+          </div>
+        </ul>
+        <hr>
+        <a href="#" class="nav-link text-white sair">
+          Sair
+        </a>
       </nav>
-      <h1>Bem-vindo,</h1>
-      <h3>Samuel de Almeida Lopes</h3>
+    </aside>
+    <div id="content" class="box-content col-8">
+      <div id="header">
+        <nav class="navbar navbar-dark navbar-expand-md mb-3">
+          <div class="container-fluid navbar-size collapse navbar-collapse">
+            <button class="btn bg-dark  fs-2 d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+        </nav>
+        <h1>Bem-vindo,</h1>
+        <h3>Samuel de Almeida Lopes</h3>
+      </div>
+      <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <img src="assets/media/banner_01.png" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>First slide label</h5>
+              <p>Some representative placeholder content for the first slide.</p>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="assets/media/banner_01.png" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Second slide label</h5>
+              <p>Some representative placeholder content for the second slide.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="assets/media/banner_01.png" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Third slide label</h5>
+              <p>Some representative placeholder content for the third slide.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     </div>
-  </div>
-</div>
-</main>
-<!-- Vertically centered modal -->
-<div class="modal fade" id="periodModal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Selecione o período</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <select class="form-select" aria-label="Default select example">
-          <option value="2022/2">2022/2</option>
-          <option value="2022/1">2022/1</option>
-          <option value="2021/2">2021/2</option>
-          <option value="2021/1">2021/1</option>
-          <option value="2020/2">2020/2</option>
-          <option value="2020/1">2020/1</option>
-          <option value="2019/2">2019/2</option>
-          <option value="2019/1">2019/1</option>
-        </select>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary openDocument">Emitir Atestado</button>
+  </main>
+  <!-- Vertically centered modal -->
+  <div class="modal fade" id="periodModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Selecione o período</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <select class="form-select" aria-label="Default select example">
+            <option value="2022/2">2022/2</option>
+            <option value="2022/1">2022/1</option>
+            <option value="2021/2">2021/2</option>
+            <option value="2021/1">2021/1</option>
+            <option value="2020/2">2020/2</option>
+            <option value="2020/1">2020/1</option>
+            <option value="2019/2">2019/2</option>
+            <option value="2019/1">2019/1</option>
+          </select>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary openDocument">Emitir Atestado</button>
+        </div>
       </div>
     </div>
   </div>

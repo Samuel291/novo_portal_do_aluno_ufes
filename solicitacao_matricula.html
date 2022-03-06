@@ -212,7 +212,7 @@ Ano / Período: 2021 / 2º Semestre
   </div>
 </div>
 <button type="button" class="btn w-100 btn-secondary btn-lg my-2 removedisabled grade-solicitacao disabled">Visualizar Grade de Solicitação</button>
-<button type="button" class="btn w-100 btn-secondary btn-lg my-2 removedisabled disabled">Solicitar</button>
+<button type="button" class="btn w-100 btn-secondary btn-lg my-2 removedisabled disabled" data-bs-toggle="modal" data-bs-target="#successModal">Solicitar</button>
 
 
 <!-- Vertically centered modal -->
@@ -285,6 +285,23 @@ Ano / Período: 2021 / 2º Semestre
     <div class="card text-dark bg-light dia" style="max-width: 18rem;">
       <div class="card-header d-flex justify-content-between">
         <span class="badge bg-secondary mx-2 nmaterias">Livre</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Vertically centered modal -->
+<div class="modal fade" id="successModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Sucesso!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img src="assets/media/check2.gif" class="col-5" style="object-fit: cover;height: 120px; width:200px;" alt="OK">
+        <p>Solicitação de matrícula enviada com sucesso, confira seu comprovante de solicitação em menu > matrícula</p>
       </div>
     </div>
   </div>
