@@ -9,16 +9,23 @@ listenAll('.col', function(e){
     $(u).collapse('toggle')
   })
 })
+
+
 listenAll('.turma', function(e){
   let obj = e.data('turmas');
   let turmaModal = $('#turmaModal');
   let componentTurmaModal = $(`.component-turma-modal`);
   let modal = new bootstrap.Modal(turmaModal);
+  var codTurmas = JSON.parse(localStorage.getItem('codTurmas') || '[]');
 
   $('#turmaModal .turma-modal').remove()
   $(obj.turmas).each(function(i){
     $(`.component-turma-modal .curso`).html(obj.turmas[i].curso)
     $(`.component-turma-modal input`).attr('data-codturma', obj.codigo + obj.turmas[i].turma)
+
+    if(codTurmas.includes(obj.codigo + obj.turmas[i].turma)){
+      $(`.component-turma-modal input`).attr('checked', true)
+    }
     $(`.component-turma-modal`).attr('data-codturma', obj.codigo + obj.turmas[i].turma)
     $(`.component-turma-modal`).attr('data-materia', obj.materia)
     $(`.component-turma-modal .vagas`).html(obj.turmas[i].disponiveis)
@@ -44,6 +51,8 @@ listenAll('.turma', function(e){
     $('#turmaModal .modal-body').append($("#content-turma-modal").html())
     $('#turmaModal .component-turma-modal').addClass('turma-modal')
     $('#turmaModal .component-turma-modal').removeClass('component-turma-modal')
+    $(`.component-turma-modal input`).attr('data-codturma', '')
+    $(`.component-turma-modal input`).attr('checked', false)
     // console.log($('#turmaModal .modal-body').html())
   })
 
@@ -51,23 +60,38 @@ listenAll('.turma', function(e){
 })
 
 listenAll('.add-turma', function(){
-  $(".turma-modal.checked").each(function(i,c){
+  $(".turma-modal").each(function(i,c){
+    if($(c).hasClass('checked')) {
+      // Pega a grade de solicitacao, se não houver vira um array vazio
+      var gradeSolicitacao = JSON.parse(localStorage.getItem('gradeSolicitacao') || '[]')
+      var codTurmas = JSON.parse(localStorage.getItem('codTurmas') || '[]')
 
-    // Pega a grade de solicitacao, se não houver vira um array vazio
-    var gradeSolicitacao = JSON.parse(localStorage.getItem('gradeSolicitacao') || '[]');
+      if (!codTurmas.includes($(c).data('codturma'))) {
+        addTurma(gradeSolicitacao, c)
+        addCod(codTurmas, c)
+      }
 
-    // Adiciona pessoa ao cadastro
-    gradeSolicitacao.push({
-      dia: getFilter(c, 'dia'),
-      materias: {materia: $(c).data('materia'), hora: getFilter(c, 'hora')},
-      nmaterias: 1
-    });
+      // Salva a lista alterada
+      localStorage.setItem('gradeSolicitacao', JSON.stringify(gradeSolicitacao))
+      localStorage.setItem('codTurmas', JSON.stringify(codTurmas))
+    }else{
+      // Pega a grade de solicitacao, se não houver vira um array vazio
+      var gradeSolicitacao = JSON.parse(localStorage.getItem('gradeSolicitacao') || '[]')
+      var codTurmas = JSON.parse(localStorage.getItem('codTurmas') || '[]')
 
-    // Salva a lista alterada
-    localStorage.setItem("gradeSolicitacao", JSON.stringify(gradeSolicitacao));
+      if (codTurmas.includes($(c).data('codturma'))) {
+        addTurma(gradeSolicitacao, c)
+        codTurmas.splice($(c).data('codturma'), 1)
+      }
+
+      // Salva a lista alterada
+      localStorage.setItem('gradeSolicitacao', JSON.stringify(gradeSolicitacao))
+      localStorage.setItem('codTurmas', JSON.stringify(codTurmas))
+    }
   })
   $('#turmaModal').hide()
   $('.modal-backdrop').hide()
+  $('.removedisabled').removeClass('disabled');
 })
 
 listenAll('.grade-solicitacao', function(){
@@ -82,6 +106,14 @@ listenAll('.grade-solicitacao', function(){
     temp.find('.dia').addClass(c)
     temp.find('.dia').removeClass('dia')
     temp.find(`.`+c).find('.nmaterias').before(c)
+
+
+    let gradeDia = $("#solicitacaoModal").find(`.`+c);
+    let afterx = '.card-header'
+    $(gradeDia).find(afterx).after($('#content-materia').html())
+    let cmateria = $($(gradeDia).find('.cmateria'))
+    cmateria.addClass('content-materia')
+    cmateria.removeClass('cmateria')
   })
 
   $(objGrade).each(function(i,c){
@@ -122,8 +154,19 @@ listenAll('.turma-modal input', function(e){
 },'change')
 
 localStorage.setItem('gradeSolicitacao', '');
-localStorage.setItem('checkedInputs', '');
+localStorage.setItem('codTurmas', '');
 
 function getFilter(element, filter){
   return $(element).find(`.`+ filter).html()
+}
+
+function addTurma(gradeSolicitacao, element){
+  gradeSolicitacao.push({
+    dia: getFilter(element, 'dia'),
+    materias: {materia: $(element).data('materia'), hora: getFilter(element, 'hora'), codturma: $(element).data('codturma')},
+    nmaterias: 1
+  });
+}
+function addCod(codeTurmas, element){
+  codeTurmas.push($(element).data('codturma'));
 }
