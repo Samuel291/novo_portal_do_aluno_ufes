@@ -76,22 +76,27 @@ listenAll('.add-turma', function(){
         addCod(codTurmas, c)
       }
     }else{
-      if (codTurmas.includes($(c).data('codturma'))) {
-        codTurmas.splice($(c).data('codturma'), 1)
-      }
-      $(gradeSolicitacao).each(function(x,y){
-        if(y.codturma == $(c).data('codturma')) {
-          gradeSolicitacao.splice(y, 1);
-        }
-      })
+      // if (codTurmas.includes($(c).data('codturma'))) {
+      //   codTurmas.splice($(c).data('codturma'), 1)
+      // }
+      // $(gradeSolicitacao).each(function(x,y){
+        codTurmas = codTurmas.filter((item) => item !== $(c).data('codturma'))
+        gradeSolicitacao = gradeSolicitacao.filter((item) => item.codturma !== $(c).data('codturma'))
+        // if(y.codturma == $(c).data('codturma')) {
+        //
+        //   console.log(y)
+        //   gradeSolicitacao.splice(y, 1);
+        // }
+      // })
     }
 
     // Salva a lista alterada
     localStorage.setItem('gradeSolicitacao', JSON.stringify(gradeSolicitacao))
     localStorage.setItem('codTurmas', JSON.stringify(codTurmas))
   })
-  $('#turmaModal').hide()
-  $('.modal-backdrop').hide()
+  // $('#turmaModal').hide()
+  // $('.modal-backdrop').hide()
+  $('#turmaModal').modal('toggle');
   $('.removedisabled').removeClass('disabled');
 })
 
@@ -158,7 +163,6 @@ function getFilter(element, filter){
 
 function addTurma(gradeSolicitacao, element){
   $($(element).find(`.horario`)).each(function (x,y){
-    console.log()
     gradeSolicitacao.push({
       dia: getFilter(y, 'dia'),
       // materias: {materia: $(element).data('materia'), hora: getFilter(element, 'hora'), codturma: $(element).data('codturma')},
@@ -176,8 +180,12 @@ function addCod(codeTurmas, element){
 
 
 listenAll('.entrar', function(){
+  $("#login").html($("#activecontent").html())
   $("#activecontent").html($("#inicio").html())
+  $("#inicio").html('')
 })
 listenAll('.sair', function(){
+  $("#inicio").html($("#activecontent").html())
   $("#activecontent").html($("#login").html())
+  $("#login").html('')
 })
