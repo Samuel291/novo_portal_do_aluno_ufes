@@ -180,6 +180,9 @@ function addCod(codeTurmas, element){
 
 
 listenAll('.entrar', function(){
+  if($("#floatingInput").val()){
+    $(".nome-aluno").html($("#floatingInput").val())
+  }
   $("#login").html($("#activecontent").html())
   $("#activecontent").html($("#inicio").html())
   $("#inicio").html('')
